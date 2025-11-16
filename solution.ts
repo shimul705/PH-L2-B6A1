@@ -8,6 +8,7 @@ function formatValue(value: string | number | boolean): string | number | boolea
     } else if (typeof value === 'boolean') {
         return !value;
     }
+    return value;
 
 }
 
