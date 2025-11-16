@@ -12,6 +12,9 @@ function formatValue(value: string | number | boolean): string | number | boolea
 
 }
 
-console.log(formatValue('hello'));
-console.log(formatValue(5));
-console.log(formatValue(true));
+
+function getLength(value: string | any[]): number {
+
+    return 0;
+}
+
