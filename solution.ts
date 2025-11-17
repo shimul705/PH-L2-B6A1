@@ -76,3 +76,41 @@ function filterByRating(items: Item[]): Item[] {
     return result;
 }
 
+
+
+
+
+
+
+
+type User = {
+    id: number;
+    name: string;
+    email: string;
+    isActive: boolean;
+};
+
+type FilterActiveUsers = (users: User[]) => User[];
+
+const filterActiveUsers: FilterActiveUsers = (users) => {
+    const result: User[] = [];
+
+    for (let i = 0; i < users.length; i++) {
+        const user: User = users[i];
+
+        if (user.isActive === true) {
+            result[result.length] = user;
+        }
+    }
+    return result;
+};
+
+
+const users = [
+    { id: 1, name: 'Rakib', email: 'rakib@example.com', isActive: true },
+    { id: 2, name: 'Asha', email: 'asha@example.com', isActive: false },
+    { id: 2, name: 'Asha', email: 'asha@example.com', isActive: false },
+    { id: 3, name: 'Rumi', email: 'rumi@example.com', isActive: true },
+    { id: 3, name: 'Rumi', email: 'rumi@example.com', isActive: true },
+];
+console.log(filterActiveUsers(users));
