@@ -1,6 +1,8 @@
 
 
-function formatValue(value: string | number | boolean): string | number | boolean {
+type FormatValue = (value: string | number | boolean) => string | number | boolean;
+
+const formatValue: FormatValue = (value) => {
     if (typeof value === 'string') {
         return value.toUpperCase();
     } else if (typeof value === 'number') {
@@ -8,9 +10,10 @@ function formatValue(value: string | number | boolean): string | number | boolea
     } else if (typeof value === 'boolean') {
         return !value;
     }
-    return value;
+    return 'invalid type';
+};
 
-}
+
 
 
 function getLength(value: string | any[]): number {
