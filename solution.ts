@@ -16,6 +16,11 @@ const formatValue: FormatValue = (value) => {
 
 
 
+
+
+
+
+
 function getLength(value: string | any[]): number {
     if (typeof value === 'string') {
         return value.length;
@@ -25,6 +30,12 @@ function getLength(value: string | any[]): number {
 
     return 0;
 }
+
+
+
+
+
+
 
 
 
@@ -44,4 +55,24 @@ class Person {
 
 
 
+
+
+
+type Item = {
+    title: string;
+    rating: number;
+};
+function filterByRating(items: Item[]): Item[] {
+    const result: Item[] = [];
+
+    for (let i = 0; i < items.length; i++) {
+        const item = items[i];
+        if (typeof item.rating === 'number' && item.rating >= 0 && item.rating <= 5) {
+            if (item.rating >= 4) {
+                result[result.length] = item;
+            }
+        }
+    }
+    return result;
+}
 
