@@ -120,25 +120,14 @@ interface Book {
     publishedYear: number;
     isAvailable: boolean;
 }
-
 const printBookDetails = (book: Book): void => {
 
     const availabilityStatus: string = (book.isAvailable === true ? 'Yes' : 'No');
 
     const BookDetails: string = `Title: ${book.title}, Author: ${book.author}, Published: ${book.publishedYear}, Available: ${availabilityStatus}`;
+
     console.log(BookDetails);
-
-
 }
 
-
-const myBook: Book = {
-    title: 'The Great Gatsby',
-    author: 'F. Scott Fitzgerald',
-    publishedYear: 1925,
-    isAvailable: true,
-};
-
-printBookDetails(myBook);
 
 
