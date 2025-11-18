@@ -175,7 +175,4 @@ const getUniqueValues: filterArray = (array1, array2) => {
 }
 
 
-const array1 = [1, 5, 2, 3, 4, 5];
-const array2 = [3, 4, 5, 6, 7, 7, 7, 7, 'e'];
-console.log(getUniqueValues(array1, array2));
 
