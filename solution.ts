@@ -1,5 +1,5 @@
 
-// 
+
 type FormatValue = (value: string | number | boolean) => string | number | boolean;
 
 const formatValue: FormatValue = (value) => {
@@ -20,7 +20,7 @@ const formatValue: FormatValue = (value) => {
 
 
 
-// 
+
 function getLength(value: string | any[]): number {
     if (typeof value === 'string') {
         return value.length;
@@ -38,7 +38,7 @@ function getLength(value: string | any[]): number {
 
 
 
-// 
+
 class Person {
     name: string;
     age: number;
@@ -57,7 +57,7 @@ class Person {
 
 
 
-// 
+
 type Item = {
     title: string;
     rating: number;
@@ -82,7 +82,7 @@ function filterByRating(items: Item[]): Item[] {
 
 
 
-// 
+
 type User = {
     id: number;
     name: string;
@@ -113,7 +113,7 @@ const filterActiveUsers: FilterActiveUsers = (users) => {
 
 
 
-// 
+
 interface Book {
     title: string;
     author: string;
@@ -137,7 +137,7 @@ const printBookDetails = (book: Book): void => {
 
 
 
-// 
+
 type filterArray = (array1: (string | number)[], array2: (string | number)[]) => (string | number)[];
 type PushItem = (array: (string | number)[], value: string | number) => void;
 
@@ -185,7 +185,7 @@ const getUniqueValues: filterArray = (array1, array2) => {
 
 
 
-// 
+
 type Product = {
     name: string;
     price: number;
@@ -193,6 +193,17 @@ type Product = {
     discount?: number;
 }
 
+type checkDiscount = (item: Product) => boolean;
 
+type computeTotal = (products: Product[]) => number;
 
+const calculateTotalPrice: computeTotal = (products) => {
+    const totalPrice: number = products.reduce((acc, product) => {
+        const regulerPrice: number = product.price * product.quantity;
+        const finalPrice: number = product.discount !== undefined && product.discount > 0 && product.discount <= 100 ? regulerPrice * (1 - product.discount / 100) : regulerPrice;
+
+        return acc + finalPrice;
+    }, 0)
+    return totalPrice;
+};
 
