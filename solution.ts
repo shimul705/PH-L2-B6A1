@@ -139,22 +139,16 @@ const printBookDetails = (book: Book): void => {
 
 // 
 type filterArray = (array1: (string | number)[], array2: (string | number)[]) => (string | number)[];
-
 type PushItem = (array: (string | number)[], value: string | number) => void;
 
 const pushMethod: PushItem = (array, value) => {
     array[array.length] = value;
 };
 
-
-
 const getUniqueValues: filterArray = (array1, array2) => {
 
-    // const result: (string | number)[] = [];
-
-
+    const result: (string | number)[] = [];
     const Arr1Arr2: (string | number)[] = [];
-
 
     for (let i = 0; i < array1.length; i++) {
         pushMethod(Arr1Arr2, array1[i])
@@ -162,19 +156,26 @@ const getUniqueValues: filterArray = (array1, array2) => {
     for (let i = 0; i < array2.length; i++) {
         pushMethod(Arr1Arr2, array2[i])
     }
-    console.log(Arr1Arr2);
-    return Arr1Arr2;
 
+    for (let i = 0; i < Arr1Arr2.length; i++) {
+        const value: string | number = Arr1Arr2[i]
+        let isExist = false;
 
+        for (let i = 0; i < result.length; i++) {
+            if (result[i] === value) {
+                isExist = true;
+            }
+        }
 
-
-
-
-
+        if (isExist === false) {
+            pushMethod(result, value);
+        }
+    }
+    return result;
 }
 
 
-const array1 = [1, 2, 3, 4, 5];
-const array2 = [3, 4, 5, 6, 7];
+const array1 = [1, 5, 2, 3, 4, 5];
+const array2 = [3, 4, 5, 6, 7, 7, 7, 7, 'e'];
 console.log(getUniqueValues(array1, array2));
 
