@@ -176,3 +176,23 @@ const getUniqueValues: filterArray = (array1, array2) => {
 
 
 
+
+
+
+
+
+
+
+
+
+// 
+type Product = {
+    name: string;
+    price: number;
+    quantity: number;
+    discount?: number;
+}
+
+
+
+
