@@ -1,5 +1,5 @@
 
-
+// 
 type FormatValue = (value: string | number | boolean) => string | number | boolean;
 
 const formatValue: FormatValue = (value) => {
@@ -20,7 +20,7 @@ const formatValue: FormatValue = (value) => {
 
 
 
-
+// 
 function getLength(value: string | any[]): number {
     if (typeof value === 'string') {
         return value.length;
@@ -38,7 +38,7 @@ function getLength(value: string | any[]): number {
 
 
 
-
+// 
 class Person {
     name: string;
     age: number;
@@ -57,7 +57,7 @@ class Person {
 
 
 
-
+// 
 type Item = {
     title: string;
     rating: number;
@@ -82,7 +82,7 @@ function filterByRating(items: Item[]): Item[] {
 
 
 
-
+// 
 type User = {
     id: number;
     name: string;
@@ -113,7 +113,7 @@ const filterActiveUsers: FilterActiveUsers = (users) => {
 
 
 
-
+// 
 interface Book {
     title: string;
     author: string;
@@ -130,4 +130,51 @@ const printBookDetails = (book: Book): void => {
 }
 
 
+
+
+
+
+
+
+
+// 
+type filterArray = (array1: (string | number)[], array2: (string | number)[]) => (string | number)[];
+
+type PushItem = (array: (string | number)[], value: string | number) => void;
+
+const pushMethod: PushItem = (array, value) => {
+    array[array.length] = value;
+};
+
+
+
+const getUniqueValues: filterArray = (array1, array2) => {
+
+    // const result: (string | number)[] = [];
+
+
+    const Arr1Arr2: (string | number)[] = [];
+
+
+    for (let i = 0; i < array1.length; i++) {
+        pushMethod(Arr1Arr2, array1[i])
+    }
+    for (let i = 0; i < array2.length; i++) {
+        pushMethod(Arr1Arr2, array2[i])
+    }
+    console.log(Arr1Arr2);
+    return Arr1Arr2;
+
+
+
+
+
+
+
+}
+
+
+const array1 = [1, 2, 3, 4, 5];
+const array2 = [3, 4, 5, 6, 7];
+console.log(getUniqueValues(array1, array2));
 
