@@ -72,6 +72,7 @@ const employee: Employee = {
 };
 ```
 তো, আমরা ছোট্ট করে দেখে ফেললাম interface ও type এর মধ্যে পার্থক্য।
+
 ---
 
 ## ২. Union আর Intersection Types
